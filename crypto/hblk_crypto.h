@@ -9,14 +9,14 @@
 #include <string.h>
 #include <sys/stat.h>
 
-#define PUB_FILENAME"key_pub.pem"
-#define PRI_FILENAME"key.pem"
+#define PUB_FILENAME "key_pub.pem"
+#define PRI_FILENAME "key.pem"
 #define EC_CURVENID_secp256k1
 
 /* EC_KEY public key octet string length (using 256-bit curve) */
-#define EC_PUB_LEN65
+#define EC_PUB_LEN 65
 /* Maximum signature octet string length (using 256-bit curve) */
-#define SIG_MAX_LEN72
+#define SIG_MAX_LEN 72
 
 /**
  * struct sig_s - EC Signature structure
@@ -30,8 +30,8 @@ typedef struct sig_s
    * @sig must stay first, so we can directly use the structure as
    * an array of char
    */
-  uint8_tsig[SIG_MAX_LEN];
-  uint8_tlen;
+uint8_t sig[SIG_MAX_LEN];
+uint8_t len;
 } sig_t;
 
 uint8_t *sha256(int8_t const *s, size_t len,
