@@ -15,6 +15,11 @@
 #define SIG_MAX_LEN 72
 #define PUB_FILENAME "key_pub.pem"
 #define PRI_FILENAME "key.pem"
+/**
+ * struct sig_t - Signature structure to stock a signature
+ * @sig: The Signature buffer
+ * @len: Signature size
+ */
 typedef struct sig_s
 {
 uint8_t sig[SIG_MAX_LEN];
