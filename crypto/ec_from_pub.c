@@ -22,7 +22,7 @@ if (!EC_POINT_oct2point(group, p, pub, EC_PUB_LEN, NULL)
 EC_KEY_free(key);
 EC_POINT_free(p);
 return (NULL);
-EC_POINT_free(p);
 }
+EC_POINT_free(p);
 return (key);
 }
