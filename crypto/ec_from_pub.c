@@ -12,9 +12,13 @@ EC_KEY *key;
 EC_GROUP *group;
 EC_POINT *p;
 key = EC_KEY_new_by_curve_name(EC_CURVE);
+if(!key)
+return (NULL);
 group = (EC_GROUP *)EC_KEY_get0_group(key);
+if(!group)
+return(NULL)
 p = EC_POINT_new(group);
-if (!p || !key || !group)
+if (!p)
 return (NULL);
 if (!EC_POINT_oct2point(group, p, pub, EC_PUB_LEN, NULL)
 || !EC_KEY_set_public_key(key, p))
