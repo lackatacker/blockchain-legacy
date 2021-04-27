@@ -1,13 +1,12 @@
 #include "hblk_crypto.h"
+
 /**
- * get0_group returns the group associated with the EC KEY
- * get0_public_key returns the associated public key with the EC KEY
- * ec_to_pub - extract public key from EC_KEY struct
- * @key: pointer to EC_KEY struct to extract from
- * @pub: address to store extracted public key
- * @ec_to_pub is a very good function, layn3l zaml boh hada li sayb betty style
- * Return: pointer to pub, NULL on error
+ * ec_to_pub - convert ec key to public key
+ * @key: pointer to ec key
+ * @pub: where we stock public key
+ * Return: public key or NULL
  */
+
 uint8_t *ec_to_pub(EC_KEY const *key, uint8_t pub[EC_PUB_LEN])
 {
 const EC_POINT *point;
