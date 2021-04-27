@@ -21,6 +21,9 @@
  * @len: Signature size
  */
 typedef struct sig_s
+/**
+ * desc for sig_s ...
+ */
 {
 uint8_t sig[SIG_MAX_LEN];
 uint8_t len;
