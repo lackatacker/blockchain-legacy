@@ -18,7 +18,7 @@ if(!key)
 return (NULL);
 group = (EC_GROUP *)EC_KEY_get0_group(key);
 if(!group)
-return(NULL)
+return(NULL);
 p = EC_POINT_new(group);
 if (!p)
 return (NULL);
