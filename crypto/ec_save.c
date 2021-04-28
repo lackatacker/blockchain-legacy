@@ -6,14 +6,14 @@ FILE *fp;
 if (!key || !folder)
 return (0);
 mkdir(folder, S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH);
-sprintf(buf, "%s%s", folder, PUBLIC_FILENAME);
+sprintf(buf, "%s%s", folder, PUB_FILENAME);
 fp = fopen(buf, "w");
 if (!fp)
 return (0);
 if (!PEM_write_EC_PUBKEY(fp, key))
 return (0);
 fclose(fp);
-sprintf(buf, "%s%s", folder, PRIVATE_FILENAME);
+sprintf(buf, "%s%s", folder, PRI_FILENAME);
 fp = fopen(buf, "w");
 if (!fp)
 return (0);
