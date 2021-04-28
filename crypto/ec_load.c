@@ -4,13 +4,13 @@
  **/
 EC_KEY *ec_load(char const *folder)
 {
-EC_KEY *key;
+EC_KEY *key = NULL;
 char buf[500];
 FILE *fp;
 sprintf(buf, "%s/%s", folder, PUB_FILENAME);
 fp = fopen(buf, "r");
 if (!fp || !folder)
-return (NULL);  
+return (NULL);
 if (!PEM_read_EC_PUBKEY(fp, &key, NULL, NULL))
 return (NULL);
 sprintf(buf, "%s/%s", folder, PRI_FILENAME);
