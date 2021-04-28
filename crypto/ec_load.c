@@ -9,7 +9,9 @@ char buf[500];
 FILE *fp;
 sprintf(buf, "%s/%s", folder, PUB_FILENAME);
 fp = fopen(buf, "r");
-if (!folder || !fp || !PEM_read_EC_PUBKEY(fp, &key, NULL, NULL))
+if (!fp || !folder)
+return (NULL);  
+if (!PEM_read_EC_PUBKEY(fp, &key, NULL, NULL))
 return (NULL);
 sprintf(buf, "%s/%s", folder, PRI_FILENAME);
 fp = fopen(buf, "r");
