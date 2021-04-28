@@ -1,4 +1,11 @@
 #include "hblk_crypto.h"
+/**
+ * this func stores pub/priv keys from eckey given
+ * ec_save - save ec private aand public keys in PEM files
+ * @key: EC_key
+ * @folder: destination folder
+ * Return: 1 succes 0 failed
+ */
 int ec_save(EC_KEY *key, char const *folder)
 {
 char buf[1000];
