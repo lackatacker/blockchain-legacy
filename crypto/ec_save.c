@@ -10,15 +10,15 @@ sprintf(buf, "%s%s", folder, PUBLIC_FILENAME);
 fp = fopen(buf, "w");
 if (!fp)
 return (0);
-if (!PEM_write_PUBKEY(fp, key))
+if (!PEM_write_EC_PUBKEY(fp, key))
 return (0);
-fpclose();
+fclose(fp);
 sprintf(buf, "%s%s", folder, PRIVATE_FILENAME);
 fp = fopen(buf, "w");
 if (!fp)
 return (0);
 if (!PEM_write_ECPrivateKey(fp, key, NULL, NULL, 0, NULL, NULL))
 return (0);
-fpclose();
+fclose(fp);
 return (1);
 }
