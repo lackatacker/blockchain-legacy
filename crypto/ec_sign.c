@@ -1,6 +1,6 @@
 #include "hblk_crypto.h"
 /**
- * @ec_sign - verifies the signature of a given set of bytes, using a given EC_KEY public key
+ * @ec_sign - Signs a given set of bytes, using a given EC_KEY public key
  *
  * test_ec_sign - Test the ec_sign function
  *
