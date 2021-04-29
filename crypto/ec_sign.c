@@ -14,9 +14,9 @@
 uint8_t *ec_sign(EC_KEY const *key, uint8_t const *msg, size_t msglen,
 sig_t *sig)
 {
-if (!key || !msg || !sig || !EC_KEY_check_key(key))
+if (!key || !msg)
 return (NULL);
-if (key && msg && ECDSA_sign(!EC_CURVE, msg, msglen, sig->sig, (unsigned int *) &sig->len
+if (ECDSA_sign(EC_CURVE, msg, msglen, sig->sig, (unsigned int *) &sig->len
 , (EC_KEY *) key))
 return (sig->sig);
 return (NULL);
