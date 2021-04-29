@@ -6,6 +6,7 @@
  * @msg: the hash that the sig should match
  * @msglen: the message length
  * @sig: the signature that should match the message once decrypted
+ * @ec-verify: it verifies if a given msg matches a hash with a given key 
  * Return: EXIT_SUCCESS or EXIT_FAILURE
  */
 int ec_verify(EC_KEY const *key, uint8_t const *msg, size_t msglen, sig_t const *sig)
