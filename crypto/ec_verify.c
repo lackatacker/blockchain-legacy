@@ -11,7 +11,7 @@ int ec_verify(EC_KEY const* key, uint8_t const* msg, size_t msglen, sig_t const*
   unsigned char hash[SHA256_DIGEST_LENGTH];
   if (!key || !msg || !sig || !(sig->len) || !msglen)
     return (0);
-  if (ECDSA_verify(0, hash, SHA256_DIGEST_LENGTH, sig->sig, sig->len,
+  if (ECDSA_verify(0, hash, SHA256_DIGEST_LENGTH, msg, msglen,
 				(EC_KEY *)key))
     return (1);
   return (0);
