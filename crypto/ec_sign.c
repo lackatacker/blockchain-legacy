@@ -1,22 +1,20 @@
 #include "hblk_crypto.h"
-
 /**
- * ec_sign - Signs a given set of bytes, using a given EC_KEY private key
- * @key: EC key pair already generated
- * @msg: message to be signed
- * @msglen: length of that message
- * @sig: pointer to save the signature into
+ * ec_sign - Signs a given set of bytes, using a given EC_KEY public key
  *
- * Return: pointer to the signature on sucess, NULL on failure
- **/
+ * test_ec_sign - Test the ec_sign function
+ *
+ * @key: Pointer to the EC Key pair to use to sign the message
+ *
+ * @msg: points to the msglen characters to verify the signature of
+ * @sig: points to the signature to be checked
+ * @msglen: msgs's length
+ * Return: EXIT_SUCCESS or EXIT_FAILURE
+ */
 uint8_t *ec_sign(EC_KEY const *key, uint8_t const *msg, size_t msglen,
 sig_t *sig)
 {
-if (key == 0 || msg == 0 || sig == 0)
+if (!key || !msg || !sig || !ECDSA_sign(EC_CURVE, msg, msglen, sig->sig, 
+(unsigned int *)&(sig->len), (EC_KEY *)key))
 return (NULL);
-if (ECDSA_sign(0, msg, msglen,
-sig->sig, (void *)&(sig->len),
-(void *)key) != 1)
-return (0);
 return (sig->sig);
-}
