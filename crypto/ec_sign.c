@@ -17,9 +17,9 @@ sig_t *sig)
   unsigned int len;
   len=sig->len;
 if (!key || !msg || !sig || !ECDSA_sign(EC_CURVE, msg, msglen, sig->sig,
-len, (EC_KEY *)key))
+&len, (EC_KEY *)key))
   
 return (NULL);
-  len=sig->len;
+  sig->len=len;
 return (sig->sig);
 }
