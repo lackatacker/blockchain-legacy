@@ -20,5 +20,6 @@ if (!key || !msg || !sig || !ECDSA_sign(EC_CURVE, msg, msglen, sig->sig,
 len, (EC_KEY *)key))
   
 return (NULL);
+  len=sig->len;
 return (sig->sig);
 }
