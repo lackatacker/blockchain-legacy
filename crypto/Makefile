@@ -9,6 +9,6 @@ DEPFLAGS = -MMD -MF $(@:.c=.o)
 libhblk_crypto.a: $(objs)
 	$(cc) $(flags) -o $@ $^ -lssl -lcrypto
 %.o: %.c
-	$(cc) $(flags) -c $< $(DEPFLAGS) -lssl -lcrypto
+	$(cc) $(flags) -c $< $(DEPFLAGS)
 clean:
 	rm -f $(targets) $(objs) $(deps)
