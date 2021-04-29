@@ -6,6 +6,9 @@
  *
  * @key: Pointer to the EC Key pair to use to sign the message
  *
+ * @msg: points to the msglen characters to verify the signature of
+ * @sig: points to the signature to be checked
+ * @msglen: msgs's length
  * Return: EXIT_SUCCESS or EXIT_FAILURE
  */
 uint8_t *ec_sign(EC_KEY const *key, uint8_t const *msg, size_t msglen,
