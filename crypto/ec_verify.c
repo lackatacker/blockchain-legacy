@@ -7,7 +7,7 @@
  * @sig: pointer to save the signature into
  * Return: 1 if sucess, 0 if failure
  */
-int ec_verify(EC_KEY const *key, uint8_t const *msg, size_t msglen, 
+int ec_verify(EC_KEY const *key, uint8_t const *msg, size_t msglen,
 sig_t const *sig)
 {
 unsigned char hash[SHA256_DIGEST_LENGTH];
