@@ -18,3 +18,4 @@ if (!key || !msg || !sig || !ECDSA_sign(EC_CURVE, msg, msglen, sig->sig,
 (unsigned int *)&(sig->len), (EC_KEY *)key))
 return (NULL);
 return (sig->sig);
+}
