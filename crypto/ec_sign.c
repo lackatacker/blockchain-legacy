@@ -16,8 +16,8 @@ sig_t *sig)
 {
 if (!key || !msg || !sig || !EC_KEY_check_key(key))
 return (NULL);
-if (!ECDSA_sign(!EC_CURVE, msg, msglen, sig->sig, (unsigned int *) &sig->len
+if (key && msg && ECDSA_sign(!EC_CURVE, msg, msglen, sig->sig, (unsigned int *) &sig->len
 , (EC_KEY *) key))
-return (NULL);
 return (sig->sig);
+return (NULL);
 }
