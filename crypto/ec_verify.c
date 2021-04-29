@@ -8,7 +8,7 @@
  */
 int ec_verify(EC_KEY const* key, uint8_t const* msg, size_t msglen, sig_t const* sig)
 {
-  if (!key | !msg | !sig | !ec_verify(key, msg, msglen, &sig))
+  if (!key | !msg | !sig | !ec_verify(key, msg, msglen, sig))
     return (0);
   return (1);
 }
