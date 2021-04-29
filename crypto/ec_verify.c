@@ -1,13 +1,11 @@
 #include "hblk_crypto.h"
 /**
- * ec-verify: Verifies a given set of bytes, using a given EC_KEY private key
- * test_ec_sign - Test the ec_sign function
- * @ a signature is a crypted hash ;)
- * @key: Pointer to the EC Key pair to use to sign the message
- * @msg: the hash that the sig should match
- * @msglen: the message length
- * @sig: the signature that should match the message once decrypted
- * Return: EXIT_SUCCESS or EXIT_FAILURE
+ * ec_verify - Verifies a given set of bytes, using a given EC_KEY private key
+ * @key: EC key pair already generated
+ * @msg: message to be signed
+ * @msglen: length of that message
+ * @sig: pointer to save the signature into
+ * Return: 1 if sucess, 0 if failure
  */
 int ec_verify(EC_KEY const *key, uint8_t const *msg, size_t msglen, sig_t const *sig)
 {
