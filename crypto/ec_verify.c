@@ -1,6 +1,6 @@
 #include "hblk_crypto.h"
 /**
- * @ec-verify: it verifies if a given msg matches a hash with a given key
+ * @ec-verify: Verifies a given set of bytes, using a given EC_KEY private key
  * test_ec_sign - Test the ec_sign function
  * @ a signature is a crypted hash ;)
  * @key: Pointer to the EC Key pair to use to sign the message
