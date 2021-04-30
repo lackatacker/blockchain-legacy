@@ -12,7 +12,7 @@ block->info.timestamp = time(0);
 memcpy(block->info.prev_hash, prev->hash, SHA256_DIGEST_LENGTH);
   if(data_len > BLOCKCHAIN_DATA_MAX)
   {
-    memcpy(block->data.buffer , data, BLOCKCHAIN_MAX_DATA);
+    memcpy(block->data.buffer , data, BLOCKCHAIN_DATA_MAX);
     block->data.len=BLOCKCHAIN_DATA_MAX;
   }
    else
