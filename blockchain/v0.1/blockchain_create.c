@@ -1,8 +1,8 @@
 #include "blockchain.h"
-/*
- * blockchain_create - creates a Blockchain structure, and initializes it.
- * return: new block, and NULL on failure.
-*/
+/**
+ * blockchain_create - create a block chain with genesis
+ * Return: a new blockchain structure
+ */
 blockchain_t *blockchain_create(void)
 {
 block_t *genesisBlock = (block_t *)malloc(sizeof(block_t)),
