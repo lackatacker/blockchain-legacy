@@ -15,7 +15,10 @@ block->data.len = BLOCKCHAIN_DATA_MAX;
 memcpy(block->data.buffer, data, BLOCKCHAIN_DATA_MAX);
 }
 else
+{
+block->data.length = data_len;
 memcpy(block->data.buffer, data, data_len);
+}
 memset(block->hash, 0, SHA256_DIGEST_LENGTH);
 return(block);
 }
