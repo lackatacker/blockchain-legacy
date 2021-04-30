@@ -11,18 +11,17 @@ uint32_t data_len)
 {
 uint32_t i;
 block_t *block = malloc(sizeof(block_t));
+int mylen = (((BLOCKCHAIN_DATA_MAX) < (data_len)) ?
+(BLOCKCHAIN_DATA_MAX) : (data_len));
 if (!prev || !data)
 return (NULL);
 block->info.index = prev->info.index + 1;
 block->info.difficulty = 0;
 block->info.nonce = 0;
 block->info.timestamp = time(0);
-if (data_len > BLOCKCHAIN_DATA_MAX)
-block->data.len = BLOCKCHAIN_DATA_MAX;
-else
-block->data.len = data_len;
+block->data.len = mylen;
 memcpy(block->info.prev_hash, prev->hash, SHA256_DIGEST_LENGTH);
-memcpy(block->data.buffer, data, BLOCKCHAIN_DATA_MAX);
+memcpy(block->data.buffer, data, mylen);
 for (i = 0; i < SHA256_DIGEST_LENGTH; i++)
 block->hash[i] = 0;
 return (block);
