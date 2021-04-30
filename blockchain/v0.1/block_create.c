@@ -3,7 +3,7 @@ block_t *block_create(block_t const *prev, int8_t const *data, uint32_t data_len
 {
 int mylen = (((BLOCKCHAIN_DATA_MAX) < (data_len)) ?
 (BLOCKCHAIN_DATA_MAX) : (data_len));
-block_t *block;
+block_t *block = NULL;
 if (!prev || !data)
 return (NULL);
 block = (block_t *) malloc( sizeof(block_t));
