@@ -1,5 +1,4 @@
 #include "blockchain.h"
-#include "llist.h"
 blockchain_t *blockchain_create(void)
 {
   blockchain_t *new_blockchain;
