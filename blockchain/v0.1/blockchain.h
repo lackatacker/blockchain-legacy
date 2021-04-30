@@ -1,7 +1,13 @@
 #ifndef BLOCKCHAIN
 #define BLOCKCHAIN
-#include <llist.h>
 #include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdint.h>
+#include <llist.h>
+#include <openssl/sha.h>
+#include <unistd.h>
 #include "../../crypto/hblk_crypto.h"
 #define BLOCKCHAIN_DATA_MAX 1024
 
