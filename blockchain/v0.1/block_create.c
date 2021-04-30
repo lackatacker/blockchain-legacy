@@ -1,11 +1,12 @@
 #include "blockchain.h"
 block_t *block_create(block_t const *prev, int8_t const *data, uint32_t data_len)
 {
-int mylen = (((BLOCKCHAIN_DATA_MAX) < (data_len)) ?
+uint8_t mylen = 0;
+if (!prev || !data )
+return (NULL);
+mylen = (((BLOCKCHAIN_DATA_MAX) < (data_len)) ?
 (BLOCKCHAIN_DATA_MAX) : (data_len));
 block_t *block = NULL;
-if (!prev || !data)
-return (NULL);
 block = (block_t *) malloc( sizeof(block_t));
 block->info.index = prev->info.index + 1;
 block->info.difficulty = 0;
