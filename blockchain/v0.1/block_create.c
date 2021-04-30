@@ -10,9 +10,8 @@ block->info.index = prev->info.index + 1;
 block->info.difficulty = block->info.nonce = 0;
 block->info.timestamp = time(NULL);
 block->data.len= mylen;
-(BLOCKCHAIN_DATA_MAX) : (prev->data.len));
-memcpy(block->info.prev_hash, prev->hash, mylen);
-memcpy(block->data.buffer , data, BLOCKCHAIN_DATA_MAX);
+memcpy(block->info.prev_hash, prev->hash, SHA256_DATA_LENGTH);
+memcpy(block->data.buffer , data, mylen);
 memset(block->hash, 0, SHA256_DIGEST_LENGTH);
 return(block);
 }
