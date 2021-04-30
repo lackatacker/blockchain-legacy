@@ -3,6 +3,6 @@ uint8_t *block_hash(block_t const *block, uint8_t hash_buf[SHA256_DIGEST_LENGTH]
 {
   if(!block)
     return (NULL);
-  SHA256((unsigned char *)block, sizeof(block_t)-sizeof(block->hash), hash_buf);
+  SHA256((unsigned char *)block, sizeof(block->data)+sizeof(block->info), hash_buf);
   return (uint8_t *)(hash_buf);
 }
