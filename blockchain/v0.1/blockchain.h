@@ -36,6 +36,15 @@ typedef struct block_s
   block_data_t    data;
   uint8_t     hash[SHA256_DIGEST_LENGTH];
 } block_t;
+void _blockchain_destroy(blockchain_t *blockchain)
+{
+	if (!blockchain)
+		return;
+
+	llist_destroy(blockchain->chain, 1, (node_dtor_t)free);
+
+	free(blockchain);
+}
 #define UNUSED(x) (void)(x)
 
 blockchain_t *blockchain_create(void);
