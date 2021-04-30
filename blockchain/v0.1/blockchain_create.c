@@ -1,7 +1,7 @@
 #include "blockchain.h"
 /**
- * blockchain_create - create a block chain with genesis
- * Return: a new blockchain structure
+ * blockchain_create - creates a blockchain initialized with genesis
+ * Return: a new blockchain, NULL on failure.
  */
 blockchain_t *blockchain_create(void)
 {
