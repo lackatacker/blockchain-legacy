@@ -4,7 +4,7 @@
 #include "../../crypto/hblk_crypto.h"
 #define BLOCKCHAIN_DATA_MAX 1024
 
-#define GENESIS_BLOCK {				\
+#define GENESIS_BLOCK {				
     { /* info */ \
       0 /* index */, \
       0, /* difficulty */ \
