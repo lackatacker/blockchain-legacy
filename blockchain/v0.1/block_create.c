@@ -7,7 +7,8 @@ return (NULL);
 block->info.index = prev->info.index + 1;
 block->info.difficulty = block->info.nonce = 0;
 block->info.timestamp = time(NULL);
-block->data.len=min(data_len, prev->data.len);
+block->data.len=(((DATA_MAX_BLOCK) < (prev->data.len)) ?
+(DATA_MAX_BLOCK) : (prev->data.len));
 memcpy(block->info.prev_hash, prev->hash, SHA256_DIGEST_LENGTH);
 memcpy(block->data.buffer ,prev->data.buffer, data_len);
 memset(block->hash, 0, SHA256_DIGEST_LENGTH);
