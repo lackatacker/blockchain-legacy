@@ -5,7 +5,7 @@
 #define BLOCKCHAIN_DATA_MAX 1024
 
 #define GENESIS_BLOCK {				
-    { /* info */ \
+    { /* info */ 
       0 /* index */, \
       0, /* difficulty */ \
       1537578000, /* timestamp */ \
