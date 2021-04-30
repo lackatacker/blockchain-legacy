@@ -1,7 +1,7 @@
 #include "blockchain.h"
 block_t *block_create(block_t const *prev, int8_t const *data, uint32_t data_len)
 {
-uint8_t mylen = 0;
+size_t mylen = 0;
 if (!prev || !data )
 return (NULL);
 mylen = (((BLOCKCHAIN_DATA_MAX) < (data_len)) ?
