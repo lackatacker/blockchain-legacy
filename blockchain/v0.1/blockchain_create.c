@@ -1,6 +1,6 @@
 #include "blockchain.h"
 /*
- * blockchain_create: creates a Blockchain structure, and initializes it.
+ * blockchain_create - creates a Blockchain structure, and initializes it.
  * return: 0 on success, and else on failure.
 */
 blockchain_t *blockchain_create(void)
