@@ -9,6 +9,7 @@ return (NULL);
 block->info.index = prev->info.index + 1;
 block->info.difficulty = block->info.nonce = 0;
 block->info.timestamp = time(NULL);
+block->info.nonce = 0;
 block->data.len= mylen;
 memcpy(block->info.prev_hash, prev->hash, SHA256_DIGEST_LENGTH);
 memcpy(block->data.buffer , data, mylen);
