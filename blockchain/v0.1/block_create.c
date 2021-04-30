@@ -5,8 +5,10 @@ block_t *block = NULL;
 uint32_t mylen = 0;
 if (!prev || !data )
 return (NULL);
-mylen = (((BLOCKCHAIN_DATA_MAX) < (data_len)) ?
-(BLOCKCHAIN_DATA_MAX) : (data_len));
+if(data_len > BLOCHAIN_DATA_MAX)
+  mylen=BLOCKCHAIN_DATA_MAX;
+else
+  mylen=data_len;
 block = (block_t *) malloc( sizeof(block_t));
 block->info.index = prev->info.index + 1;
 block->info.difficulty = 0;
