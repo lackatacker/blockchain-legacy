@@ -1,8 +1,9 @@
 #include "blockchain.h"
-block_t *block_create(block_t const *prev, int8_t const *data, uint32_t data_len)
+block_t *block_create(block_t const *prev, int8_t const
+*data, uint32_t data_len)
 {
 block_t *block = NULL;
-if (!prev || !data )
+if (!prev || !data)
 return (NULL);
 block = (block_t *) malloc(sizeof(block_t));
 block->info.index = prev->info.index + 1;
