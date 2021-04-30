@@ -1,4 +1,7 @@
 #include "blockchain.h"
+/**
+ * creates a Blockchain structure, and initializes it.
+*/
 blockchain_t *blockchain_create(void)
 {
 block_t *genesisBlock = (block_t *)malloc(sizeof(block_t)),
