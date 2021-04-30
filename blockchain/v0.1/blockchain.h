@@ -23,12 +23,6 @@ typedef struct blockchain_s
 {
   llist_t     *chain;
 } blockchain_t;
-typedef struct block_s
-{
-  block_info_t    info;
-  block_data_t    data;
-  uint8_t     hash[SHA256_DIGEST_LENGTH];
-} block_t;
 typedef struct block_info_s
 {
 
@@ -44,4 +38,11 @@ typedef struct block_data_s
   int8_t      buffer[BLOCKCHAIN_DATA_MAX];
   uint32_t    len;
 } block_data_t;
+typedef struct block_s
+{
+  block_info_t    info;
+  block_data_t    data;
+  uint8_t     hash[SHA256_DIGEST_LENGTH];
+} block_t;
+
 #endif
