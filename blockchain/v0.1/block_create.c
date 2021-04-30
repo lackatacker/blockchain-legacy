@@ -1,28 +1,20 @@
 #include "blockchain.h"
-/**
- * block_create - create a block and initialises it
- *@prev: previous  block
- *@data: data to be stored in the block
- *@data_len: length of data
- * Return: a new block structure or NULL
- */
-block_t *block_create(block_t const *prev, int8_t const *data,
-uint32_t data_len)
+block_t *block_create(block_t const *prev, int8_t const *data, uint32_t data_len)
 {
-uint32_t i;
-block_t *block = malloc(sizeof(block_t));
-int mylen = (((BLOCKCHAIN_DATA_MAX) < (data_len)) ?
-(BLOCKCHAIN_DATA_MAX) : (data_len));
-if (!prev || !data)
+uint32_t mylen = 0;
+if (!prev || !data )
 return (NULL);
+mylen = (((BLOCKCHAIN_DATA_MAX) < (data_len)) ?
+(BLOCKCHAIN_DATA_MAX) : (data_len));
+block_t *block = NULL;
+block = (block_t *) malloc( sizeof(block_t));
 block->info.index = prev->info.index + 1;
 block->info.difficulty = 0;
 block->info.nonce = 0;
 block->info.timestamp = time(0);
-block->data.len = mylen;
+block->data.len= mylen;
 memcpy(block->info.prev_hash, prev->hash, SHA256_DIGEST_LENGTH);
-memcpy(block->data.buffer, data, mylen);
-for (i = 0; i < SHA256_DIGEST_LENGTH; i++)
-block->hash[i] = 0;
-return (block);
+memcpy(block->data.buffer , data, mylen);
+memset(block->hash, 0, SHA256_DIGEST_LENGTH);
+return(block);
 }
