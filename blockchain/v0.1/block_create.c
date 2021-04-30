@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pulls
-Issues
-Marketplace
-Explore
- 
-@lackatacker 
-louizimoncef
-/
-emsi-blockchain
-1
-00
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-More
-emsi-blockchain/blockchain/v0.1/block_create.c
-@louizimoncef
-louizimoncef Update block_create.c
-Latest commit f029e69 11 days ago
- History
- 1 contributor
-29 lines (29 sloc)  848 Bytes
-  
 #include "blockchain.h"
 /**
  * block_create - create a block and initialises it
@@ -56,16 +27,3 @@ for (i = 0; i < SHA256_DIGEST_LENGTH; i++)
 block->hash[i] = 0;
 return (block);
 }
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
