@@ -6,7 +6,7 @@ int mylen = (((BLOCKCHAIN_DATA_MAX) < (data_len)) ?
 block_t *block = calloc(0, sizeof(block_t));
 if(!data || !prev)
 return (NULL);
-block->info.index = prev->info.index + 1
+block->info.index = prev->info.index + 1;
 block->info.difficulty = block->info.nonce = 0;
 block->info.timestamp = time(NULL);
 block->info.nonce = 0;
