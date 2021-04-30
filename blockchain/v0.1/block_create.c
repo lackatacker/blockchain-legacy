@@ -5,7 +5,7 @@ block_t *block = NULL;
 uint32_t mylen = 0;
 if (!prev || !data )
 return (NULL);
-if(data_len > BLOCHAIN_DATA_MAX)
+if(data_len > BLOCKCHAIN_DATA_MAX)
   mylen=BLOCKCHAIN_DATA_MAX;
 else
   mylen=data_len;
