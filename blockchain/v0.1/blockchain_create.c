@@ -1,7 +1,8 @@
 #include "blockchain.h"
 blockchain_t *blockchain_create(void)
 {
-block_t *genesisBlock = (block_t *)malloc(sizeof(block_t)), gen = GENESIS_BLOCK;
+block_t *genesisBlock = (block_t *)malloc(sizeof(block_t)),
+gen = GENESIS_BLOCK;
 blockchain_t *new_blockchain = malloc(sizeof(blockchain_t));
 new_blockchain->chain = llist_create(MT_SUPPORT_TRUE);
 memcpy(genesisBlock, (block_t *) &gen, sizeof(block_t));
