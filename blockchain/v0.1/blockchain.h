@@ -29,7 +29,7 @@ typedef struct block_s
   block_data_t    data;
   uint8_t     hash[SHA256_DIGEST_LENGTH];
 } block_t;
-#define GENESIS_BLOCK{ \
+#define GENESIS_BLOCK { \
 	{ /* info */ \
 		0 /* index */, \
 		0, /* difficulty */ \
