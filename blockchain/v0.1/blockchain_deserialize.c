@@ -39,7 +39,7 @@ return (fclose(f),NULL);
 i = fread(&buffer, 3, 1, f);
 if (i!=3 || !strcmp(buffer, HBLK_VERSION))
 return (fclose(f),NULL);
-i = fread(&(uint8_t)endianness, 1, 1, f);
+i = fread((uint8_t)&endianness, 1, 1, f);
 if (endianness != 1 || i!=1)
 return (fclose(f),NULL);
 endianness = endianness != _get_endianness();
