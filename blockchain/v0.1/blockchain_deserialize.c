@@ -26,7 +26,7 @@ blockchain_t *blockchain_deserialize(char const *path)
 blockchain_t *blockchain = (blockchain_t *)malloc(sizeof(blockchain_t));
 uint8_t endianness = 0, size=0;
 FILE *f;
-int i;
+uint8_t i;
 char buffer[500];
 blockchain->chain = llist_create(MT_SUPPORT_TRUE);
 f = fopen(path, "rb");
