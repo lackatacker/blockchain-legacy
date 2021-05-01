@@ -16,8 +16,8 @@ for (i=0 ; i < list_size ; i++)
 {
 myblock = llist_get_node_at(blockchain->chain, i++);
 if (write(f, &(myblock->info), sizeof(myblock->info)) != sizeof(myblock->info) ||
-write(f, &(myblock->data.len, sizeof(myblock->data.len))) != myblock->data.len ||
-write(f, &(myblock->hash, SHA256_DIGEST_LENGTH)) != SHA256_DIGEST_LENGTH ||
+write(f, &(myblock->data.len), sizeof(myblock->data.len)) != myblock->data.len ||
+write(f, &(myblock->hash), SHA256_DIGEST_LENGTH) != SHA256_DIGEST_LENGTH ||
 write(f, myblock->data.buffer, myblock->data.len) != myblock->data.len)
 return (-1);
 }
