@@ -9,7 +9,6 @@
 #include <llist.h>
 #include <openssl/sha.h>
 #include <unistd.h>
-#include "provided/endianness.h"
 #include "../../crypto/hblk_crypto.h"
 #define BLOCKCHAIN_DATA_MAX 1024
 
