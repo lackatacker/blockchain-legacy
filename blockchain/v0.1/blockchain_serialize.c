@@ -2,7 +2,7 @@
 int blockchain_serialize(blockchain_t const *blockchain, char const *path)
 {
 uint8_t end = _get_endianness();
-int f;
+int f, i;
 block_t *myblock;
 int32_t list_size = llist_size(blockchain->chain);
 if (!blockchain || !path || !(f=open(path, O_CREAT |
