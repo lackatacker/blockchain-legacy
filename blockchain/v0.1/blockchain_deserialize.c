@@ -48,5 +48,6 @@ if(i!=4)
 return (fclose(f),NULL);
 if(endianness)
 _swap_endian(&size, sizeof(size));
+blockchain->chain = blocks_deserialize(f, size, endianness);
 return(fclose(f), blockchain);
 }
