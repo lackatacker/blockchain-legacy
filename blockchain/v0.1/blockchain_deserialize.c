@@ -1,5 +1,5 @@
 #include "blockchain.h"
-llist_t *deserialize_block(int f, uint32_t size, uint8_t endianness)
+llist_t *deserialize_block(FILE* f, uint32_t size, uint8_t endianness)
 {
 size_t i=0;
   block_t *block;
