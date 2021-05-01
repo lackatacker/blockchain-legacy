@@ -1,4 +1,7 @@
 #include "blockchain.h"
+/**
+ * blockchain_serialize - serializes a block into a file.
+ */
 int blockchain_serialize(blockchain_t const *blockchain, char const *path)
 {
 uint8_t end = _get_endianness();
