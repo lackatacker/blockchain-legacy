@@ -36,6 +36,8 @@ typedef struct block_s
   block_data_t    data;
   uint8_t     hash[SHA256_DIGEST_LENGTH];
 } block_t;
+#define HBLK_MAGIC "HBLK"
+#define HBLK_VERSION "0.1"
 #define UNUSED(x) (void)(x)
 
 blockchain_t *blockchain_create(void);
