@@ -15,9 +15,11 @@ write(f, &list_size, 4);
 for (i=0 ; i < size ; i++)
 {
 myblock = llist_get_node_at(blockchain->chain, i++);
-write(f, &(myblock->info), sizeof(block->info));
-write(f, &(myblock->data.len, sizeof(block->data.len)));
-write(f, &(myblock->hash, SHA256_DIGEST_LENGTH));
+if (write(f, &(myblock->info), sizeof(block->info)) != sizeof(block->info) ||
+write(f, &(myblock->data.len, sizeof(block->data.len))) != block->data.len ||
+write(f, &(myblock->hash, SHA256_DIGEST_LENGTH)) != SHA256_DIGEST_LENGTH ||
+write(f, myblock->data.buffer, myblock->data.len) != myblock->data.len)
+return (-1);
 }
 close (f);
 return (0);
