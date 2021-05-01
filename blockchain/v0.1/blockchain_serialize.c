@@ -1,6 +1,9 @@
 #include "blockchain.h"
 /**
  * blockchain_serialize - serializes a block into a file.
+ * @path: the path where to create/override the file.
+ * @blockchain: the block to serialize
+ * Return: 0 upon succes, -1 else.
  */
 int blockchain_serialize(blockchain_t const *blockchain, char const *path)
 {
