@@ -2,6 +2,7 @@
 llist_t *deserialize_block(int f, uint32_t size, uint8_t endianness)
 {
 size_t i=0;
+  block_t *block;
 llist_t *list = llist_create(MT_SUPPORT_TRUE);
 if (!list || !f || !size)
 return (NULL);
