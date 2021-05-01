@@ -5,7 +5,7 @@ size_t i=0;
 llist_t *list = llist_create(MT_SUPPORT_TRUE);
 if (!list || !f || !size)
 return (NULL);
-for(i; i < size ; i++)
+for(i=0; i < size ; i++)
 {
 block = (block_t *)malloc(sizeof(block_t));
 fread(&block->info, sizeof(block->info), 1, f);
