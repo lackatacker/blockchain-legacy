@@ -25,7 +25,7 @@ return (list);
 blockchain_t *blockchain_deserialize(char const *path)
 {
 blockchain_t *blockchain = (blockchain_t *)malloc(sizeof(blockchain_t));
-uint8_t endianness = 0, size=0;
+uint8_t *endianness, size=0;
 FILE *f;
 uint8_t i;
 char buffer[500];
@@ -39,15 +39,15 @@ return (fclose(f),NULL);
 i = fread(&buffer, 3, 1, f);
 if (i!=3 || !strcmp(buffer, HBLK_VERSION))
 return (fclose(f),NULL);
-i = fread((uint8_t)&endianness, 1, 1, f);
-if (endianness != 1 || i!=1)
+i = fread(endianness, 1, 1, f);
+if (*endianness != 1 || i!=1)
 return (fclose(f),NULL);
-endianness = endianness != _get_endianness();
+*endianness = *endianness != _get_endianness();
 i = fread(&size, 4, 1, f);
 if(i!=4)
 return (fclose(f),NULL);
-if(endianness)
+if(*endianness)
 _swap_endian(&size, sizeof(size));
-blockchain->chain = deserialize_block(f, size, endianness);
+blockchain->chain = deserialize_block(f, size, *endianness);
 return(fclose(f), blockchain);
 }
