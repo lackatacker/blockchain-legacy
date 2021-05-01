@@ -18,8 +18,8 @@ _swap_endian(&block->info.index, sizeof(block->info.index));
 _swap_endian(&block->info.nonce, sizeof(block->info.nonce));
 _swap_endian(&block->info.timestamp, sizeof(block->info.timestamp));
 }
-return (list);
 }
+return (list);
 }
 blockchain_t *blockchain_deserialize(char const *path)
 {
