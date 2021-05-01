@@ -2,11 +2,11 @@
 int blockchain_serialize(blockchain_t const *blockchain, char const *path)
 {
 uint8_t end = _get_endianness();
-int f = 0, i;
+int f, i;
 block_t *myblock;
 int32_t list_size = llist_size(blockchain->chain);
-if (!blockchain || !path || !f = open(path, O_CREAT |
-O_TRUNC | S_IRUSR | S_IWUSR))
+f = open(path, O_CREAT | O_TRUNC | S_IRUSR | S_IWUSR);
+if (!blockchain || !path || !f)
 return (-1);
 write(f, HBLK_MAGIC, 4);
 write(f, HBLK_VERSION, 3);
