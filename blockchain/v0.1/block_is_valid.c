@@ -1,6 +1,9 @@
 #include "blockchain.h"
 /**
-* block_is_valid - returns 0 if the block is valid, 50 otherwise.
+* block_is_valid - checks if a given block is valid.
+* @block: the block to be checked.
+* @prev_block: its previous block.
+* Return: 0 if valid, else 50.
 */
 int block_is_valid(block_t const *block, block_t const *prev_block)
 {
