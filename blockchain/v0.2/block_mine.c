@@ -6,7 +6,7 @@
 void block_mine(block_t *block)
 {
 uint8_t hash_buff[SHA256_DIGEST_LENGTH];
-if (!hash_matches_difficulty(block->hash, block->info.difficulty))
+block_hash(block, hash_buff);
 while (!hash_matches_difficulty(hash_buff, block->info.difficulty))
 {
 block->info.nonce++;
