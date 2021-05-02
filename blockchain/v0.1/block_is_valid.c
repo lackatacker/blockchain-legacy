@@ -9,7 +9,7 @@
 int is_genesis(block_t const *block)
 {
 blockchain_t *blockchain = blockchain_create();
-if (!blockchain || )
+if (!blockchain)
 return (-1);
 if (memcmp(block, llist_get_head(blockchain->chain), sizeof(*block)) != 0)
 {
@@ -22,7 +22,7 @@ return (0);
 int block_is_valid(block_t const *block, block_t const *prev_block)
 {
 uint8_t hash_buf[SHA256_DIGEST_LENGTH];
-if (!block || ((block->info.index == 0) && prev_block))
+if (!block || ((block->info.index == 0) && prev_block != NULL))
 return (-1);
 if (block->info.index == 0 && !is_genesis(block))
 return (-1);
