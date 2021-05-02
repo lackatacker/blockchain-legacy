@@ -1,11 +1,7 @@
 #include "blockchain.h"
 /**
-* block_is_valid - checks if a given block is valid.
-* is_genesis - returns 0 if the block is genesis, -1 otherwise.
-* @block: the block to be checked.
-* @prev_block: its previous block.
-* Return: 0 if valid, else 50.
-*/
+ * is_genesis - returns 0 if the block is genesis.
+*/ 
 int is_genesis(block_t const *block)
 {
 blockchain_t *blockchain = blockchain_create();
@@ -19,6 +15,12 @@ return (-1);
 blockchain_destroy(blockchain);
 return (0);
 }
+/**
+* block_is_valid - checks if a given block is valid.
+* @block: the block to be checked.
+* @prev_block: its previous block.
+* Return: 0 if valid, else 50.
+*/
 int block_is_valid(block_t const *block, block_t const *prev_block)
 {
 uint8_t hash_buf[SHA256_DIGEST_LENGTH];
