@@ -43,6 +43,7 @@ return (-1);
 if (memcmp(block->info.prev_hash, prev_block->hash, SHA256_DIGEST_LENGTH))
 return (-1);
 if (block->data.len <= BLOCKCHAIN_DATA_MAX)
+if (hash_matches_difficulty(block->hash, block->info.difficulty)
 return (0);
 return (-1);
 }
