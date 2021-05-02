@@ -29,7 +29,7 @@ return (is_genesis(block));
 if (block->info.index != prev_block->info.index + 1)
 return (-1);
 if (!block_hash(prev_block, hash_buf) || memcmp(hash_buf,
-prev_block->hash, SHA256_DIGEST_LENGTH)))
+prev_block->hash, SHA256_DIGEST_LENGTH))
 return (-1);
 if (memcmp(prev_block->hash, block->info.prev_hash, SHA256_DIGEST_LENGTH))
 return (-1);
