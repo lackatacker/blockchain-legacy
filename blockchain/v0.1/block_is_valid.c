@@ -33,7 +33,7 @@ prev_block->hash, sizeof(block_t)))
 return (50);
 if (memcmp(prev_block->hash, block->info.prev_hash, SHA256_DIGEST_LENGTH))
 return (50);
-if (strcmp(block->info.prev_hash, prev_block->hash, SHA256_DIGEST_LENGTH))
+if (memcmp(block->info.prev_hash, prev_block->hash, SHA256_DIGEST_LENGTH))
 return (50);
 if (block->data.len < BLOCKCHAIN_DATA_MAX)
 return (0);
