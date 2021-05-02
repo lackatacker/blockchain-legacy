@@ -26,7 +26,7 @@ if (!block || ((block->info.index == 0) && prev_block))
 return (50);
 if (block->info.index == 0 && !is_genesis(block))
 return (50);
-if (block->info.index != prev_block->index + 1))
+if (block->info.index != prev_block->info.index + 1))
 return (50);
 if (!block_hash(prev_block, hash_buf) || memcmp(hash_buf,
 prev_block->hash, sizeof(block_t)))
