@@ -1,6 +1,6 @@
 int block_is_valid(block_t const *block, block_t const *prev_block)
 /**
-* - block_is_valid - returns 0 if the block is valid, 50 otherwise.
+* block_is_valid - returns 0 if the block is valid, 50 otherwise.
 */
 {
 block_t genesis = BLOCK_GENESIS_INIT;
