@@ -5,6 +5,19 @@
 * @prev_block: its previous block.
 * Return: 0 if valid, else 50.
 */
+int is_genesis(block_t const *block)
+{
+blockchain_t *blockchain = blockchain_create();
+if (!blockchain)
+return (-1);
+if (memcmp(block, llist_get_head(blockchain->chain), sizeof(*block)) != 0)
+{
+blockchain_destroy(blockchain);
+return (-1);
+}
+blockchain_destroy(blockchain);
+return (0);
+}
 int block_is_valid(block_t const *block, block_t const *prev_block)
 {
 uint8_t hash_buf[SHA256_DIGEST_LENGTH];
