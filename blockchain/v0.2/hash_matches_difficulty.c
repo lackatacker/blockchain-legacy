@@ -9,8 +9,6 @@ int hash_matches_difficulty(uint8_t const hash[SHA256_DIGEST_LENGTH],
 uint32_t difficulty)
 {
 uint8_t i, m, d;
-if (!hash)
-return (0);
 d = difficulty / 8;
 m = difficulty % 8;
 for (i = 0 ; i < d ; i++)
