@@ -1,6 +1,8 @@
 #include "blockchain.h"
 /**
  * is_genesis - returns 0 if the block is genesis.
+ * @block: the block to be verified.
+ * Return: 0 if matching, 1 else.
 */ 
 int is_genesis(block_t const *block)
 {
