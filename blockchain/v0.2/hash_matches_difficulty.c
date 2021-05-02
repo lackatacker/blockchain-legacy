@@ -1,10 +1,6 @@
 #include "blockchain.h"
 int hash_matches_difficulty(uint8_t const hash[SHA256_DIGEST_LENGTH],
-<<<<<<< HEAD
-			    uint32_t difficulty)
-=======
 uint32_t difficulty)
->>>>>>> b9731f103b9b6d39050563af561c310bb69fa155
 {
   uint8_t i,m,d;
   if(!hash)
