@@ -1,10 +1,10 @@
 #include "blockchain.h"
 /**
 * block_is_valid - checks if a given block is valid.
+* is_genesis - returns 0 if the block is genesis, -1 otherwise.
 * @block: the block to be checked.
 * @prev_block: its previous block.
 * Return: 0 if valid, else 50.
-* is_genesis - returns 0 if the block is genesis, -1 otherwise.
 */
 int is_genesis(block_t const *block)
 {
