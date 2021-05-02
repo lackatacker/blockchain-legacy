@@ -22,11 +22,11 @@ return (0);
 int block_is_valid(block_t const *block, block_t const *prev_block)
 {
 uint8_t hash_buf[SHA256_DIGEST_LENGTH];
-if (!block || (block->info.index == 0) && prev_block)
+if (!block || ((block->info.index == 0) && prev_block))
 return (50);
 if (block->info.index == 0 && !is_genesis(block))
 return (50);
-if (block->info.index == 1 && is_genesis(prev_block))
+if (block->info.index != prev_block->index + 1))
 return (50);
 if (!block_hash(prev_block, hash_buf) || memcmp(hash_buf,
 prev_block->hash, sizeof(block_t)))
