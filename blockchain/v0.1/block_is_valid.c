@@ -3,7 +3,7 @@
  * is_genesis - returns 0 if the block is genesis.
  * @block: the block to be verified.
  * Return: 0 if matching, 1 else.
-*/ 
+*/
 int is_genesis(block_t const *block)
 {
 blockchain_t *blockchain = blockchain_create();
@@ -37,7 +37,7 @@ prev_block->hash, SHA256_DIGEST_LENGTH))
 return (-1);
 if (memcmp(prev_block->hash, block->info.prev_hash, SHA256_DIGEST_LENGTH))
 return (-1);
-if (block_hash(block, hash_buf) != block->hash)  
+if (block_hash(block, hash_buf) != block->hash)
 return (-1);
 if (memcmp(block->info.prev_hash, prev_block->hash, SHA256_DIGEST_LENGTH))
 return (-1);
