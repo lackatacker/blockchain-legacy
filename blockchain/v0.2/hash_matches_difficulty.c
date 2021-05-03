@@ -13,9 +13,10 @@ d = difficulty / 8;
 m = difficulty % 8;
 for (i = 0 ; i < d ; i++)
 {
-if ((hash[i] & 0) == 0)
-if ((hash[d] >> (8 - m)) == 0)
-return (1);
+if ((hash[i] & 0) != 0)
+return (0);
 }
+if ((hash[d] << m) > 128)
+return (1);
 return (0);
 }
