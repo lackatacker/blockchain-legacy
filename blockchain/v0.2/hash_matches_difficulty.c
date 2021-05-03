@@ -16,6 +16,6 @@ for (i = 0 ; i < d ; i++)
 if (hash[i] & 0 == 0)
 if ((hash[d] >> (8 - m)) == 0)
 return (1);
-return (0);
 }
+return (0);
 }
