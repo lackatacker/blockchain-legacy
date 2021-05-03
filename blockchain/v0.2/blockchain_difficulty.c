@@ -11,7 +11,7 @@ uint32_t elapsed_time, expected_elapsed_time;
 block_t *tail_block = llist_get_tail(blockchain->chain);
 block_t *last_modified_block;
 if (tail_block->info.index % DIFFICULTY_ADJUSTMENT_INTERVAL == 0
-&& tail_block->info.index != 1)
+&& tail_block->info.index != 0)
 {
 block_index = llist_size(blockchain->chain) - DIFFICULTY_ADJUSTMENT_INTERVAL;
 last_modified_block = llist_get_node_at(blockchain->chain, block_index);
