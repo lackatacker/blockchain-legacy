@@ -47,7 +47,7 @@ block_t *block_create(block_t const *prev,int8_t const *data, uint32_t data_len)
 void block_destroy(block_t *block);
 void blockchain_destroy(blockchain_t *blockchain);
 #define BLOCK_GENERATION_INTERVAL 1
-#deefine DIFFICULTY_ADJUSTMENT_INTERVAL 5
+#define DIFFICULTY_ADJUSTMENT_INTERVAL 5
 uint8_t *block_hash(block_t const *block, uint8_t hash_buf[SHA256_DIGEST_LENGTH]);
 int blockchain_serialize(blockchain_t const *blockchain, char const *path);
 
