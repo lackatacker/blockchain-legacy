@@ -18,3 +18,4 @@ if ((hash[d] >> (8 - m)) == 0)
 return (1);
 return (0);
 }
+}
