@@ -2,7 +2,7 @@
 /**
  * blockchain_difficulty - gives a potential difficulty.
  * @blockchain: the blockchain to analyze.
- * Return - the potential difficulty.
+ * Return: the potential difficulty.
  */
 uint32_t blockchain_difficulty(blockchain_t const *blockchain)
 {
