@@ -1,4 +1,4 @@
-include "blockchain.h"
+#include "blockchain.h"
 /**
  * blockchain_difficulty - gives a potential difficulty.
  * @blockchain: the blockchain to analyze.
