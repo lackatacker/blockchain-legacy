@@ -23,3 +23,4 @@ else if (eet > eet * 2)
 tail_block->info.difficulty--;
 }
 return (tail_block->info.difficulty);
+}
