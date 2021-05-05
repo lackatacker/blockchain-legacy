@@ -1,5 +1,5 @@
 #ifndef TRANSACTION_H
-#define TRANSACTIO_H
+#define TRANSACTION_H
 #include "blockchain.h"
 #include <stdint.h>
 typedef struct tx_out_s
