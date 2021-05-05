@@ -21,14 +21,6 @@ typedef struct transaction_s
   uint8_t     id[SHA256_DIGEST_LENGTH];
   llist_t     *inputs;
   llist_t     *outputs;
-} transaction_t;
-typedef struct block_s
-{
-  block_info_t    info; /* This must stay first */
-  block_data_t    data; /* This must stay second */
-  llist_t     *transactions;
-  uint8_t     hash[SHA256_DIGEST_LENGTH];
-} block_t;
 
 # define COINBASE_AMOUNT    50
 tx_out_t *tx_out_create(uint32_t amount, uint8_t const pub[EC_PUB_LEN]);
