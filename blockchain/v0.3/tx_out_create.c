@@ -5,8 +5,8 @@ tx_out_t *tx_out_create(uint32_t amount, uint8_t const pub[EC_PUB_LEN])
 if(!amount || !pub)
   return (NULL);
 if(
-   !memcpy(tx_out->amount, amount, sizeof(amount)) ||
-   !memcpy(tx_out->pub, pub, sizeof(pub)))
+   !memcpy((uint32_t)tx_out->amount, amount, sizeof(amount)) ||
+   !memcpy((uitn32_t)tx_out->pub, pub, sizeof(pub)))
   return (NULL);
 return tx_out;
 }
