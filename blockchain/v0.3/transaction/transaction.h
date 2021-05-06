@@ -1,6 +1,6 @@
 #ifndef TRANSACTION_H
 #define TRANSACTION_H
-#include "blockchain.h"
+#include "../blockchain.h"
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
