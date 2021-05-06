@@ -2,6 +2,14 @@
 #define TRANSACTION_H
 #include "blockchain.h"
 #include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdint.h>
+#include <llist.h>
+#include <openssl/sha.h>
+#include <time.h>
+#include <unistd.h>
 typedef struct tx_out_s
 {
   uint32_t    amount;
