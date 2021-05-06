@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 =======
 #include "transaction.h"
+<<<<<<< HEAD
 >>>>>>> 7dc03f433cf99c8956f0f0aa300d2dc3180d826e
 #include "blockchain.h"
+=======
+>>>>>>> 441d877edf917b10639d4cc3d2ac71f994d79405
 tx_out_t *tx_out_create(uint32_t amount, uint8_t const pub[EC_PUB_LEN])
 {
   tx_out_t *tr;
