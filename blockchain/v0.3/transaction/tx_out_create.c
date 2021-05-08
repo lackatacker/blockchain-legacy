@@ -1,13 +1,13 @@
 #include "transaction.h"
 tx_out_t *tx_out_create(uint32_t amount, uint8_t const pub[EC_PUB_LEN])
 {
-  tx_out_t *tx_out = malloc(sizeof(tx_out_t));
+tx_out_t *tx_out = malloc(sizeof(tx_out_t));
 if (!amount || !pub || !tx_out)
-  return (NULL);
-if (!(tx_out->amount = amount) ||
-   !memcpy(&tx_out->pub, &pub, EC_PUB_LEN) ||
-   !sha256((const int8_t *)tx_out, sizeof(tx_out->pub) + sizeof(tx_out->amount),
+return (NULL);
+tx_out->amount = amount;
+if (!memcpy(&tx_out->pub, &pub, EC_PUB_LEN) ||
+!sha256((const int8_t *)tx_out, sizeof(tx_out->pub) + sizeof(tx_out->amount),
 tx_out->hash))
-  return (NULL);
+return (NULL);
 return (tx_out);
 }
