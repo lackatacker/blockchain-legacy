@@ -1,4 +1,9 @@
 #include "transaction.h"
+/**
+ * tx_out_create - creates an output transaction
+ * @amount: the amount in the transaction.
+ * @pub: the length of the public key.
+*/
 tx_out_t *tx_out_create(uint32_t amount, uint8_t const pub[EC_PUB_LEN])
 {
 tx_out_t *tx_out = malloc(sizeof(tx_out_t));
