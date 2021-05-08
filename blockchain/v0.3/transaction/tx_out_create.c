@@ -1,6 +1,7 @@
 #include "transaction.h"
 /**
  * tx_out_create - creates an output transaction
+ * @Return: the trasaction output, or NULL if it fails.
  * @amount: the amount in the transaction.
  * @pub: the length of the public key.
 */
