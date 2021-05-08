@@ -12,8 +12,8 @@ if (!amount || !pub || !tx_out)
 return (NULL);
 tx_out->amount = amount;
 memcpy(&tx_out->pub, &pub, EC_PUB_LEN);
-if (!sha256((const int8_t *)tx_out, sizeof(tx_out->pub) + sizeof(tx_out->amount),
-tx_out->hash))
+if (!sha256((const int8_t *)tx_out,
+sizeof(tx_out->pub) + sizeof(tx_out->amount), tx_out->hash))
 return (NULL);
 return (tx_out);
 }
