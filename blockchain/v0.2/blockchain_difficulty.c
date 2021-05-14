@@ -20,6 +20,8 @@ if (et < (eet * 2))
 tail_block->info.difficulty++;
 else if (eet > (eet * 2))
 tail_block->info.difficulty--;
+else
+tail_block->info.difficulty = 0;
 }
 return (tail_block->info.difficulty);
 }
