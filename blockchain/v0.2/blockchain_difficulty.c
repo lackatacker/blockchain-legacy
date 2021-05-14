@@ -17,9 +17,9 @@ last = llist_get_node_at(blockchain->chain, block_index + 1);
 eet = DIFFICULTY_ADJUSTMENT_INTERVAL * BLOCK_GENERATION_INTERVAL;
 et = tail_block->info.timestamp - last->info.timestamp;
 if (et < (eet * 2))
-++last->info.difficulty;
+return (last->info.difficulty + 1);
 else if (eet > (eet * 2))
---last->info.difficulty;
+return (last->info.difficulty - 1);
 return (last->info.difficulty);
 }
 return (tail_block->info.difficulty);
