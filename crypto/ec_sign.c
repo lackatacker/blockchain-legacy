@@ -7,6 +7,7 @@
  * @msglen: msgs's length.
  * Return: NULL, or the sig upon success.
  */
+uint8_t *ec_sign(EC_KEY const *key, uint8_t const *msg, size_t msglen, sig_t *sig)
 {
 unsigned char md[SHA256_DIGEST_LENGTH];
 
