@@ -11,7 +11,7 @@ if (hash[i] & 1 << bit)
 return (0);
 else
 cpt++;
-if (cpt >= difficulty)
+if (cpt == difficulty)
 return (1);
 return (0);
 }
