@@ -12,11 +12,8 @@ int f, i;
 block_t *myblock;
 int32_t list_size = llist_size(blockchain->chain);
 f = open(path, O_WRONLY);
-if (!blockchain || !path || f==-1)
-{
-close(f);
+if (f == -1)
 return (-1);
-}
 write(f, HBLK_MAGIC, 4);
 write(f, HBLK_VERSION, 3);
 write(f, &end, 1);
