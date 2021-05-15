@@ -13,4 +13,5 @@ else
 cpt++;
 if (cpt >= difficulty)
 return (1);
+return (0);
 }
