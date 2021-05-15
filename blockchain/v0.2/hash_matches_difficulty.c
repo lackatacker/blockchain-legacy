@@ -20,5 +20,6 @@ else
 cpt++;
 }
 }
-return (0);
+if (cpt == difficulty)
+return (1);
 }
