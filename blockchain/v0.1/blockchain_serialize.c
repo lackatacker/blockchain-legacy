@@ -12,7 +12,7 @@ int f, i;
 block_t *myblock;
 int32_t list_size = llist_size(blockchain->chain);
 f = open(path, O_WRONLY);
-if (!blockchain || !path || !f)
+if (!blockchain || !path || f==-1)
 {
 close(f);
 return (-1);
