@@ -23,8 +23,8 @@ for (i = 0 ; i < list_size ; i++)
 myblock = llist_get_node_at(blockchain->chain, i++);
 write(f, &(myblock->info), sizeof(myblock->info));
 write(f, &(myblock->data.len), sizeof(myblock->data.len));
-write(f, &(myblock->hash), SHA256_DIGEST_LENGTH);
 write(f, myblock->data.buffer, myblock->data.len);
+write(f, &(myblock->hash), SHA256_DIGEST_LENGTH);
 }
 close(f);
 return (0);
