@@ -11,7 +11,7 @@ uint8_t end = _get_endianness();
 int f, i;
 block_t *myblock;
 int32_t list_size = llist_size(blockchain->chain);
-f = open(path, O_CREAT | O_TRUNC | S_IRUSR | S_IWUSR);
+f = open(path, O_WRONLY);
 if (!blockchain || !path || !f)
 {
 close(f);
