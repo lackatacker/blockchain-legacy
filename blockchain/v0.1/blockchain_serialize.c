@@ -13,7 +13,10 @@ block_t *myblock;
 int32_t list_size = llist_size(blockchain->chain);
 f = open(path, O_CREAT | O_TRUNC | S_IRUSR | S_IWUSR);
 if (!blockchain || !path || !f)
+{
+close(f);
 return (-1);
+}
 write(f, HBLK_MAGIC, 4);
 write(f, HBLK_VERSION, 3);
 write(f, &end, 1);
