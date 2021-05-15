@@ -10,7 +10,7 @@ uint32_t cpt = 0;
 int i = 0;
 int bit = 7;
 
-for (i = 0; i < SHA256_DIGEST_LENGTH; i++)
+for (i = 0; i <= SHA256_DIGEST_LENGTH; i++)
 {
 for (bit = 7; bit >= 0; bit--)
 {
