@@ -8,19 +8,19 @@
 int hash_matches_difficulty(uint8_t const hash[SHA256_DIGEST_LENGTH],
 uint32_t difficulty)
 {
-uint8_t i, j, cpt=0;
+uint8_t i, j, cpt = 0;
 for (i = 0; i < SHA256_DIGEST_LENGTH; i++)
 if (!hash[i])
-cpt+=8;
+cpt += 8;
 else
 break;
-for(j = 0; j<8; j++)
-if(hash[i] >> j == 0)
+for(j = 0; j < 8; j++)
+if (hash[i] >> j == 0)
 {
-cpt+=(8-j);
+cpt += (8 - j);
 break;
 }
-if(cpt < difficulty)
+if (cpt < difficulty)
 return (0);
 return (1);
 }
