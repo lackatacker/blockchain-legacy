@@ -17,7 +17,7 @@ break;
 for(j = 0; j<8; j++)
 if(hash[i] >> j == 0)
 {
-cpt+=j;
+cpt+=(8-j);
 break;
 }
 if(cpt < difficulty)
