@@ -1,3 +1,4 @@
+  
 #include "blockchain.h"
 /**
 * hash_matches_difficulty - checks if hash matches difficulty
@@ -8,19 +9,13 @@
 int hash_matches_difficulty(uint8_t const hash[SHA256_DIGEST_LENGTH],
 uint32_t difficulty)
 {
-uint8_t i, j, cpt = 0;
-for (i = 0; i < SHA256_DIGEST_LENGTH; i++)
-if (!hash[i])
-cpt += 8;
-else
-break;
-for (j = 1; j < 8; j++)
-if (hash[i] >> j == 0)
-{
-cpt += (8 - j);
-break;
-}
-if (cpt < difficulty)
+uint8_t i, m, d;
+d = difficulty / 8;
+m = difficulty % 8;
+for (i = 0 ; i < d ; i++)
+if (hash[i])
 return (0);
+if (hash[d] >> (8 - m) == 0)
 return (1);
+return (0);
 }
