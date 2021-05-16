@@ -12,6 +12,8 @@ int i, j, cpt=0;
 for (i = 0; i < SHA256_DIGEST_LENGTH; i++)
 if (!hash[i])
 cpt+=8;
+else
+break;
 for(j = 0; j<8; j++)
 if(hash[i] >> j == 0)
 {
