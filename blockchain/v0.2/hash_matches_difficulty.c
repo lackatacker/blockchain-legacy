@@ -14,8 +14,11 @@ if (!hash[i])
 cpt+=8;
 for(j = 0; j<8; j++)
 if(hash[i] >> j == 0)
+{
 cpt+=j;
+break;
+}
 if(cpt < difficulty)
-return 0;
-return 1;
+return (0);
+return (1);
 }
