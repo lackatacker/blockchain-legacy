@@ -14,7 +14,7 @@ if (!hash[i])
 cpt += 8;
 else
 break;
-for(j = 0; j < 8; j++)
+for (j = 0; j < 8; j++)
 if (hash[i] >> j == 0)
 {
 cpt += (8 - j);
