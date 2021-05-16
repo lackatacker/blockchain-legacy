@@ -12,8 +12,10 @@ int i, cpt=0;
 for (i = 0; i < SHA256_DIGEST_LENGTH; i++)
 if (!hash[i])
 cpt+=8;
-else 
-if (hash[i] >> (8 - difficulty % 8) == 0)
-return (1);
-return (0);
+for(i = 0; i<8; i++)
+if(hash[i] >> i == 0)
+cpt+=i;
+if(cpt < difficulty)
+return 0;
+return 1;
 }
